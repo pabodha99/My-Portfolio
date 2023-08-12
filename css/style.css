@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,900&display=swap');
+
+@media only screen and (max-width: 767px) {
+  /* CSS rules for mobile devices */
+}
+
+body{
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}
+a{
+	text-decoration:none;
+}
+.red{
+	color: #f33f3f;
+
+}
+ 
+.white{
+	color: white;
+}
+
+.navbar{
+
+	display: flex;
+	background-color: black;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0px 100px;
+}
+.navbar ul{
+	list-style-type: none;
+	display: flex;
+}
+.navbar ul li{
+	margin-left: 20px ;
+	
+}
+.navbar ul li a{
+	position: relative;
+    padding: 20px 20px;
+}
+.navbar ul li a::before{
+	 content: "";
+	 position: absolute;
+	 width: 0%;
+     height: 3px;
+	 background-color: #f33f3f;
+	 bottom: 0;
+	 right: 0;
+	 transition: 0.5s;
+}
+.navbar ul li a:hover::before{
+	 width: 100%;
+	 left: 0;
+}
+
+.banner{
+	padding:  180px 100px;
+	background-image: url("../Images/0.webp");
+	background-size: 1300px;
+}
+.banner div{
+	text-align: center;
+}
+.banner div h1{
+	font-size: 60px;
+}
+
+
+.product
+{
+ padding: 50px 100px;	
+}
+.section-heading{
+	display:  flex;
+	align-items: center;
+	justify-content:space-between ;
+	border-bottom: 1px solid gray;
+}
+.section-heading h1{
+	font-size:40px ;
+	margin: 0;
+}
+
+.product .box-container{
+	padding: 35px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2rem;
+}
+
+.product .box-container .box{
+    border: 0.1rem solid darkred;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .1);
+    background: #fff;
+    display:none;
+}
+
+.product .box-container .box:nth-child(1),
+.product .box-container .box:nth-child(2),
+.product .box-container .box:nth-child(3),
+.product .box-container .box:nth-child(4),
+.product .box-container .box:nth-child(5),
+.product .box-container .box:nth-child(6){
+    display: inline-block;
+}
+
+.product .box-container .box:hover .image img{
+    transform: scale(0.9);
+}
+
+.product .box-container .box .image{
+    height: 30rem;
+    overflow: hidden;
+}
+
+.product .box-container .box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .2s linear;
+}
+
+.product .box-container .box .content{
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.product .box-container .box .content h3{
+    font-size: 1.5rem;
+    color: black;
+}
+
+.product .box-container .box .content p{
+    font-size: 1rem;
+    color: #777;
+    line-height: 1.5;
+    padding: 1rem 0;
+}
+.product .flex-box{
+	display: flex;
+	justify-content: space-between;
+}
+
+.product .flex-box ul{
+	 list-style-type: none;
+	 padding: 0;
+	 display: inline-block;
+}
+
+.product .flex-box ul li{
+	margin-right: 5px;
+	margin-bottom: 5px;
+	display: inline-block;
+
+}
+
+.product .flex-box button{
+	padding: 0.7rem;
+	background-color: white;
+	border: 1px solid;
+	color: #f33f3f;
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 1rem;
+	display: inline-block;
+	margin-bottom: 5px;
+	margin-right: 1px;
+}
+
+.product .flex-box button:hover{
+    background-color: #f33f3f;	
+    color: white;
+}
+
+
+.about{
+	padding: 50px 100px;
+}
+.about-main{
+	display: flex;
+	justify-content: space-between;
+}
+.about-text{
+	width: 50%;
+	padding-top: 50px ;
+}
+.about-img{
+	padding-top: 80px;
+	margin-left: 200px;
+}
+.about-text h2{
+	padding-top: 5px;
+	color: #013f8b;
+}
+.about .justified-paragraph {
+  text-align: justify;
+
+}
+.about-text ul{
+	padding-left: 18px;
+}
+
+.about-btn{
+	padding: 15px 25px;
+	border: none;
+	background-color: #f33f3f;
+	border-radius: 8px;
+	color: white;
+}
+
+.about-btn{
+	background-color: #f33f3f;
+	border: 1px solid #f33f3f;
+	color: white;
+}
+
+/* Add this to your existing CSS */
+.dialog {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .dialog-content {
+	background-color: #fff;
+	max-width: 500px;
+	margin: 20px auto;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .close-btn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 5px;
+	cursor: pointer;
+  }
+  
+  /* Add media query to center the dialog on smaller screens */
+  @media screen and (max-width: 600px) {
+	.dialog-content {
+	  max-width: 90%;
+	}
+  }
+  
+
+
+
+.footer{
+    background: url(../Images/black.jpeg)no-repeat;
+    background-size: cover;
+    background-position:center;
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 4rem;
+}
+
+.footer .box-container .box h3{
+    color: white;
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+    padding-left: 9rem;
+}
+
+.footer .box-container .box a{
+    color: #ffd;
+    font-size: 1.2rem;
+    padding-bottom: 1.5rem;
+    padding-left: 7rem;
+    display: block;
+}
+
+.footer .box-container .box a i{
+    color: red;
+    padding-right: 1.5rem;
+    transition: .2s linear;
+
+}
+
+.footer .box-container .box a:hover i{
+    padding-right: 2rem;
+}
+
+.footer .credit{
+    text-align: center;
+    padding-top: 1rem;
+    margin-top: 3rem;
+    border-top: .1rem solid #ffd;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.footer .credit span{
+    color: red;
+} 
+form {
+  background-color:rgb(214, 201, 201);
+  padding: 40px;
+  width: 400px;
+  margin: 0 auto;
+  text-transform:capitalize;
+  text-decoration: solid;
+  
+}
+
+
+.inputBox {
+  
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+}
+.btn{
+  background-color: rgb(212, 81, 81);
+  color:white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+
+
+.registering .register-form {
+    padding: 2rem;
+    background: var(--light-bg);
+}
+
+.registering .register-form .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.registering .register-form .flex .inputBox {
+    flex: 1 1 41rem;
+}
+
+.registering .register-form .flex .inputBox input,
+.registering .register-form .flex .inputBox select {
+    width: 100%;
+    padding: 1.2rem 1.4rem;
+    font-size: 2rem;
+    color: var(--light-black);
+    text-transform: none;
+    margin-top: 1.5rem;
+    border: var(--border);
+}
+
+.registering .register-form .flex .inputBox input:focus,
+.registering .register-form .flex .inputBox select:focus {
+    background: var(--black);
+    color: var(--white);
+}
+
+.registering .register-form .flex .inputBox input:focus::placeholder,
+.registering .register-form .flex .inputBox select:focus::placeholder {
+    color: var(--light-white);
+}
+
+.registering .register-form .flex .inputBox span {
+    font-size: 1.5rem;
+    color: var(--light-black);
+}
+
+.registering .register-form .btn {
+    margin-top: 2rem;
+}
+
+.heading-title{
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 45px;
+    text-transform: uppercase;
+    color: red;
+	font-weight: bolder;
+}
